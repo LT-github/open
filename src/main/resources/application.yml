@@ -11,7 +11,7 @@ dubbo:
     base-packages: com.lt.lxc
   protocol: 
     name: dubbo
-    port: 23457
+    port: 23456
   registry: 
     address: N/A
 logging: 
