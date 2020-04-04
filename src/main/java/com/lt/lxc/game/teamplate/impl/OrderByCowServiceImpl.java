@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.lt.lxc.utils.Arith;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
@@ -97,7 +98,7 @@ public class OrderByCowServiceImpl extends IOrderService{
 		//庄家的牛与闲家的牛的比较
 		if(playerNiuForm > bankerNiuForm){
 			//			//若闲家大于庄家,则闲家赢
-			wonMoney = gp.getSingle()*getOdd(order.getBetsContent(), playerNiuForm)*order.getOdds()+gp.getMoney();
+			wonMoney = Arith.add(Arith.mul(gp.getSingle(),getOdd(order.getBetsContent(), playerNiuForm)),gp.getMoney());
 			//			vo.getBetResultMap().put(Arrays.toString(playerLocal), wonMoney);
 		}else {
 			wonMoney = gp.getSingle()*getOdd(order.getBetsContent(), bankerNiuForm)*(-1);

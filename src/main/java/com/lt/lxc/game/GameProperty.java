@@ -1,5 +1,6 @@
 package com.lt.lxc.game;
 
+
 public class GameProperty {
 	
 	private int count;
